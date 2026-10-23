@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Book Bahasa Jawa Kelas 6 Semester II</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-emerald-800 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <button id="sidebar-toggle" class="lg:hidden p-2 rounded-lg hover:bg-emerald-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📚</span>
+                    <h1 class="text-lg sm:text-xl font-bold tracking-wide">e-Book Basa Jawa SD Kelas 6</h1>
+                </div>
+            </div>
+            <div class="relative w-48 sm:w-64">
+                <input type="text" id="search-input" placeholder="Cari materi..." class="w-full pl-9 pr-4 py-1.5 text-sm bg-emerald-900/60 text-white placeholder-emerald-200 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-400">
+                <svg class="w-4 h-4 absolute left-3 top-2.5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 gap-6">
+
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 transform -translate-x-full lg:relative lg:translate-x-0 transition duration-200 ease-in-out z-40 w-64 bg-white rounded-xl shadow-sm border border-slate-200 p-4 shrink-0 h-[calc(100vh-5rem)] sticky top-20 overflow-y-auto custom-scrollbar">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Daftar Isi Materi</h2>
+            <nav class="space-y-1 text-sm font-medium">
+                <a href="#wulangan4" class="block px-3 py-2 rounded-lg text-emerald-700 bg-emerald-50 hover:bg-emerald-100 font-semibold">
+                    Wulangan 4: Geguritan & Teks Prosedur
+                </a>
+                <div class="pl-3 space-y-1 my-1 text-slate-600 border-l-2 border-slate-100 text-xs">
+                    <a href="#geguritan" class="block py-1 hover:text-emerald-600">1. Mahami Geguritan</a>
+                    <a href="#prosedur" class="block py-1 hover:text-emerald-600">2. Mahami Teks Prosedur</a>
+                    <a href="#perbandingan4" class="block py-1 hover:text-emerald-600">3. Perbedaan lan Ringkesan</a>
+                    <a href="#glosarium4" class="block py-1 hover:text-emerald-600">4. Glosarium & Nilai Luhur</a>
+                </div>
+
+                <a href="#wulangan5" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100 font-semibold mt-4">
+                    Wulangan 5: Tembang Macapat Kinanthi
+                </a>
+                <div class="pl-3 space-y-1 my-1 text-slate-600 border-l-2 border-slate-100 text-xs">
+                    <a href="#macapat-intro" class="block py-1 hover:text-emerald-600">1. Apa iku Macapat?</a>
+                    <a href="#jinis-macapat" class="block py-1 hover:text-emerald-600">2. Jinis-jinis Macapat</a>
+                    <a href="#paugeran-kinanthi" class="block py-1 hover:text-emerald-600">3. Paugeran Tembang Kinanthi</a>
+                    <a href="#unsur-kinanthi" class="block py-1 hover:text-emerald-600">4. Unsur & Nilai-Nilai Luhur</a>
+                </div>
+
+                <a href="#wulangan6" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100 font-semibold mt-4">
+                    Wulangan 6: Mahami Aksara Jawa
+                </a>
+                <div class="pl-3 space-y-1 my-1 text-slate-600 border-l-2 border-slate-100 text-xs">
+                    <a href="#aksara-intro" class="block py-1 hover:text-emerald-600">1. Aksara Jawa & Hanacaraka</a>
+                    <a href="#crita-aji-saka" class="block py-1 hover:text-emerald-600">2. Crita Aji Saka</a>
+                    <a href="#sandhangan" class="block py-1 hover:text-emerald-600">3. Sandhangan Swara, Panyigeg & Wyanjana</a>
+                    <a href="#aksara-khusus" class="block py-1 hover:text-emerald-600">4. Murda, Swara, Angka & Tandha Wacan</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Article -->
+        <main class="flex-1 space-y-8 min-w-0">
+
+            <!-- Title Banner -->
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-6 sm:p-8 text-white shadow-lg">
+                <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold tracking-wide uppercase mb-2">Modul Pembelajaran Interaktif</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-2">Basa Jawa Kelas 6 Semester II</h1>
+                <p class="text-emerald-100 text-sm sm:text-base">Panduan lengkap Geguritan, Teks Prosedur, Tembang Macapat Kinanthi, lan Aksara Jawa.</p>
+            </div>
+
+            <!-- SECTION WULANGAN 4 -->
+            <section id="wulangan4" class="content-section bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-200 pb-4">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Bab 1</span>
+                    <h2 class="text-2xl font-bold text-slate-900">WULANGAN 4: MAHAMI GEGURITAN LAN TEKS PROSEDUR</h2>
+                </div>
+
+                <!-- 1. Geguritan -->
+                <div id="geguritan" class="space-y-4">
+                    <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2">
+                        <span>1. Mahami Geguritan</span>
+                    </h3>
+                    <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-slate-800 mb-1">Pangertosan Geguritan (Pengertian)</h4>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            <strong>Geguritan</strong> yaiku karya sastra Jawa Anyar kang awujud puisi bebas. Geguritan ora kaiket dening <em>guru gatra, guru wilangan, lan guru lagu</em> kaya tembang macapat. Geguritan nggunakake basa Jawa ngoko utawa krama kanthi bebas.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-slate-800 mb-2 text-sm">Ciri-ciri Utama Geguritan:</h4>
+                        <ul class="grid sm:grid-cols-2 gap-2 text-sm">
+                            <li class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="text-emerald-500">✓</span> Ora kaiket aturan tartamtu (bebas)
+                            </li>
+                            <li class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="text-emerald-500">✓</span> Nggunakake basa kang endah lan puitis
+                            </li>
+                            <li class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="text-emerald-500">✓</span> Ana tipografi (tata letak) kang khas
+                            </li>
+                            <li class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="text-emerald-500">✓</span> Ngandhut piweling, pitutur, utawa pangajaran
+                            </li>
+                            <li class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-lg border border-slate-100 sm:col-span-2">
+                                <span class="text-emerald-500">✓</span> Bisa diwaca kanthi lagu/irama tartamtu
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Unsur Intrinsik & Ekstrinsik -->
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="border border-slate-200 p-4 rounded-xl">
+                            <h4 class="font-bold text-slate-800 mb-2 text-sm border-b pb-1">Unsur Intrinsik Geguritan</h4>
+                            <dl class="text-xs space-y-2">
+                                <div><dt class="font-bold text-slate-700">Tema:</dt><dd class="text-slate-600">Pokok pikiran utawa gagasan pokok</dd></div>
+                                <div><dt class="font-bold text-slate-700">Amanat:</dt><dd class="text-slate-600">Pesen moral kang arep diaturake</dd></div>
+                                <div><dt class="font-bold text-slate-700">Rasa / Swasana:</dt><dd class="text-slate-600">Kahanan batin kang digambarake</dd></div>
+                                <div><dt class="font-bold text-slate-700">Diksi:</dt><dd class="text-slate-600">Pilihan tembung kang digunakake</dd></div>
+                                <div><dt class="font-bold text-slate-700">Imaji:</dt><dd class="text-slate-600">Gambaran kang bisa dirasa (visual, auditif, taktil)</dd></div>
+                                <div><dt class="font-bold text-slate-700">Gaya Basa:</dt><dd class="text-slate-600">Majas (personifikasi, metafora, simile, hiperbola)</dd></div>
+                            </dl>
+                        </div>
+                        <div class="border border-slate-200 p-4 rounded-xl bg-slate-50/50">
+                            <h4 class="font-bold text-slate-800 mb-2 text-sm border-b pb-1">Unsur Ekstrinsik & Jenis</h4>
+                            <div class="mb-3">
+                                <span class="font-semibold text-xs text-slate-700 block mb-1">Unsur Ekstrinsik:</span>
+                                <ul class="text-xs list-disc pl-4 text-slate-600 space-y-1">
+                                    <li>Latar belakang pangripta</li>
+                                    <li>Kahanan sosial budaya</li>
+                                    <li>Nilai-nilai kang ana ing geguritan</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-xs text-slate-700 block mb-1">Jenis-jenis Geguritan:</span>
+                                <ol class="text-xs list-decimal pl-4 text-slate-600 space-y-0.5">
+                                    <li>Geguritan Religius (Agama)</li>
+                                    <li>Geguritan Patriotik (Katresnan tanah air)</li>
+                                    <li>Geguritan Alam (Kaendahan alam)</li>
+                                    <li>Geguritan Sosial (Masyarakat)</li>
+                                    <li>Geguritan Pendidikan (Piwulang/pitutur)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Teks Prosedur -->
+                <div id="prosedur" class="pt-6 border-t border-slate-100 space-y-4">
+                    <h3 class="text-lg font-bold text-emerald-800 flex items-center gap-2">
+                        <span>2. Mahami Teks Prosedur</span>
+                    </h3>
+                    <p class="text-sm text-slate-700 leading-relaxed">
+                        <strong>Teks Prosedur</strong> yaiku teks kang ngandhut urut-urutane cara nindakake sawijining kegiatan utawa nggawe sawijining barang. Tujuane supaya wong kang maca bisa nindakake kanthi bener lan runtut.
+                    </p>
+
+                    <!-- Struktur Teks Prosedur -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left border-collapse border border-slate-200 rounded-lg">
+                            <thead class="bg-slate-100 text-slate-700">
+                                <tr>
+                                    <th class="p-2.5 border border-slate-200 font-semibold">Struktur</th>
+                                    <th class="p-2.5 border border-slate-200 font-semibold">Penjelasan</th>
+                                    <th class="p-2.5 border border-slate-200 font-semibold">Contoh</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-slate-600">
+                                <tr>
+                                    <td class="p-2.5 border border-slate-200 font-medium text-slate-800">1. Irah-irahan / Judhul</td>
+                                    <td class="p-2.5 border border-slate-200">Jeneng kegiatan utawa barang kang arep digawe</td>
+                                    <td class="p-2.5 border border-slate-200 italic">Cara Nggawe Wedang Jahe</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 border border-slate-200 font-medium text-slate-800">2. Tujuan</td>
+                                    <td class="p-2.5 border border-slate-200">Apa kang arep digayuh saka prosedur kasebut</td>
+                                    <td class="p-2.5 border border-slate-200 italic">Supaya bisa nggawe wedang jahe kang sehat lan anget.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 border border-slate-200 font-medium text-slate-800">3. Bahan & Piranti</td>
+                                    <td class="p-2.5 border border-slate-200">Bahan (ilang/owah) lan Piranti/Alat (ora ilang)</td>
+                                    <td class="p-2.5 border border-slate-200">Bahan: Jahe 2 ruas, Gula Jawa, Banyu. Piranti: Panci, Gelas, Sendok.</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 border border-slate-200 font-medium text-slate-800">4. Langkah-langkah</td>
+                                    <td class="p-2.5 border border-slate-200">Urutan cara nggawe kang runtut</td>
+                                    <td class="p-2.5 border border-slate-200">1. Jupuk jahe dikeprok. 2. Lebokna banyu & jahe ing panci...</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2.5 border border-slate-200 font-medium text-slate-800">5. Penutup (opsional)</td>
+                                    <td class="p-2.5 border border-slate-200">Penegasan utawa tambahan informasi</td>
+                                    <td class="p-2.5 border border-slate-200 italic">Wedang jahe siap disuguhake.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Perbandingan -->
+                <div id="perbandingan4" class="pt-6 border-t border-slate-100">
+                    <h4 class="font-bold text-slate-800 mb-3 text-sm">Tabel Perbandingan Geguritan vs Teks Prosedur</h4>
+                    <div class="grid sm:grid-cols-2 gap-4 text-xs">
+                        <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200">
+                            <h5 class="font-bold text-amber-900 mb-2">GEGURITAN</h5>
+                            <ul class="space-y-1.5 text-slate-700">
+                                <li>• <strong>Wujud:</strong> Puisi / karya sastra</li>
+                                <li>• <strong>Tujuan:</strong> Ngungkapake rasa, pitutur, pangajaran</li>
+                                <li>• <strong>Basa:</strong> Puitis, konotatif, diksi endah</li>
+                                <li>• <strong>Struktur:</strong> Bebas, ora kaiket aturan khusus</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50/60 p-4 rounded-xl border border-blue-200">
+                            <h5 class="font-bold text-blue-900 mb-2">TEKS PROSEDUR</h5>
+                            <ul class="space-y-1.5 text-slate-700">
+                                <li>• <strong>Wujud:</strong> Teks informatif / petunjuk</li>
+                                <li>• <strong>Tujuan:</strong> Menerangake cara nindakake kegiatan/nggawe barang</li>
+                                <li>• <strong>Basa:</strong> Lugas, denotatif, cetha lan terarah</li>
+                                <li>• <strong>Struktur:</strong> Runtut, sistematis, ukara imperatif (pakon)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glosarium & Nilai Luhur -->
+                <div id="glosarium4" class="pt-6 border-t border-slate-100 bg-slate-50 p-4 rounded-xl">
+                    <h4 class="font-bold text-slate-800 text-sm mb-2">Nilai-Nilai Luhur Wulangan 4</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                        <div class="bg-white p-2 rounded border border-slate-200">❤️ Tresna Basa Jawa</div>
+                        <div class="bg-white p-2 rounded border border-slate-200">🎨 Kreatif & Imajinatif</div>
+                        <div class="bg-white p-2 rounded border border-slate-200">📌 Disiplin & Runtut</div>
+                        <div class="bg-white p-2 rounded border border-slate-200">🤝 Tanggung Jawab</div>
+                        <div class="bg-white p-2 rounded border border-slate-200">👥 Gotong Royong</div>
+                        <div class="bg-white p-2 rounded border border-slate-200">🏛️ Ngajeni Budaya</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION WULANGAN 5 -->
+            <section id="wulangan5" class="content-section bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-200 pb-4">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Bab 2</span>
+                    <h2 class="text-2xl font-bold text-slate-900">WULANGAN 5: TEMBANG MACAPAT KINANTHI</h2>
+                </div>
+
+                <!-- Intro Macapat -->
+                <div id="macapat-intro" class="space-y-3">
+                    <h3 class="text-lg font-bold text-emerald-800">1. Pangertosan Tembang Macapat</h3>
+                    <p class="text-sm text-slate-700 leading-relaxed">
+                        <strong>Tembang Macapat</strong> yaiku salah sijining jenis tembang tradisional Jawa kang nduweni aturan tartamtu lan wis diwarisake turun-temurun (Sastra Jawa Pertengahan).
+                    </p>
+                    <div class="grid sm:grid-cols-3 gap-3 text-xs">
+                        <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                            <span class="font-bold text-emerald-900 block">Guru Gatra</span>
+                            Cacahing larik / baris saben pada (bait).
+                        </div>
+                        <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                            <span class="font-bold text-emerald-900 block">Guru Wilangan</span>
+                            Cacahing wanda (suku kata) saben gatra.
+                        </div>
+                        <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
+                            <span class="font-bold text-emerald-900 block">Guru Lagu</span>
+                            Tibaning swara vokal ing pungkasaning gatra.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jinis Macapat Table -->
+                <div id="jinis-macapat" class="space-y-3 pt-4 border-t border-slate-100">
+                    <h3 class="text-lg font-bold text-emerald-800">2. 11 Jinis Tembang Macapat</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left border-collapse border border-slate-200">
+                            <thead class="bg-slate-100 text-slate-700">
+                                <tr>
+                                    <th class="p-2 border">No</th>
+                                    <th class="p-2 border">Jinis</th>
+                                    <th class="p-2 border">Watak / Karakter</th>
+                                    <th class="p-2 border">Paugeran (Gatra, Wilangan, Lagu)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-slate-600">
+                                <tr><td class="p-2 border">1</td><td class="p-2 border font-medium">Mijil</td><td class="p-2 border">Lembut, sepi, tentrem</td><td class="p-2 border">6 gatra (10i, 6o, 10e, 10i, 6i, 6u)</td></tr>
+                                <tr><td class="p-2 border">2</td><td class="p-2 border font-medium">Sinom</td><td class="p-2 border">Lembut, renyah, penuh pitutur</td><td class="p-2 border">9 gatra (8a, 8i, 8a, 8i, 7i, 8u, 7a, 8i, 12a)</td></tr>
+                                <tr class="bg-emerald-50 font-semibold text-emerald-900"><td class="p-2 border">3</td><td class="p-2 border">Kinanthi</td><td class="p-2 border">Gandrung, katresnan, sabar</td><td class="p-2 border">6 gatra (8u, 8i, 8a, 8i, 8a, 8i)</td></tr>
+                                <tr><td class="p-2 border">4</td><td class="p-2 border font-medium">Asmaradana</td><td class="p-2 border">Sengsem, asmara, sedhih</td><td class="p-2 border">7 gatra (8i, 8a, 8e, 8a, 7a, 8u, 8a)</td></tr>
+                                <tr><td class="p-2 border">5</td><td class="p-2 border font-medium">Gambuh</td><td class="p-2 border">Sumanak, sumulur, wani</td><td class="p-2 border">5 gatra (7u, 10u, 12i, 8u, 8o)</td></tr>
+                                <tr><td class="p-2 border">6</td><td class="p-2 border font-medium">Dhandhanggula</td><td class="p-2 border">Luwes, manis, resep</td><td class="p-2 border">10 gatra (10i, 10a, 8e, 7u, 9i, 7a, 6u, 8a, 12i, 7a)</td></tr>
+                                <tr><td class="p-2 border">7</td><td class="p-2 border font-medium">Durma</td><td class="p-2 border">Galak, mantep, nafsu</td><td class="p-2 border">7 gatra (12a, 7i, 6a, 7a, 8i, 5a, 7i)</td></tr>
+                                <tr><td class="p-2 border">8</td><td class="p-2 border font-medium">Pangkur</td><td class="p-2 border">Sereng, tegas, wani</td><td class="p-2 border">7 gatra (8a, 11i, 8u, 7a, 12u, 8a, 8i)</td></tr>
+                                <tr><td class="p-2 border">9</td><td class="p-2 border font-medium">Megatruh</td><td class="p-2 border">Sedhih, prihatin, getun</td><td class="p-2 border">5 gatra (12u, 8i, 8u, 8i, 8o)</td></tr>
+                                <tr><td class="p-2 border">10</td><td class="p-2 border font-medium">Pocung</td><td class="p-2 border">Kendho, tanpa bobot, sembrana</td><td class="p-2 border">4 gatra (12u, 6a, 8i, 12a)</td></tr>
+                                <tr><td class="p-2 border">11</td><td class="p-2 border font-medium">Maskumambang</td><td class="p-2 border">Ngeres, sedhih, nelangsa</td><td class="p-2 border">4 gatra (12i, 6a, 8i, 8a)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tembang Kinanthi Detail -->
+                <div id="paugeran-kinanthi" class="space-y-4 pt-4 border-t border-slate-100">
+                    <h3 class="text-lg font-bold text-emerald-800">3. Paugeran Tembang Kinanthi</h3>
+                    <p class="text-sm text-slate-700">Tembang Kinanthi asale saka tembung <em>"kanthi"</em> kang tegese dituntun utawa diiringi.</p>
+
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+                        <h4 class="font-bold text-amber-900 text-sm mb-2 text-center">Paugeran Kinanthi: 8u - 8i - 8a - 8i - 8a - 8i</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-6 gap-2 text-center text-xs font-semibold">
+                            <div class="bg-white p-2 rounded border shadow-sm">Gatra 1: 8u</div>
+                            <div class="bg-white p-2 rounded border shadow-sm">Gatra 2: 8i</div>
+                            <div class="bg-white p-2 rounded border shadow-sm">Gatra 3: 8a</div>
+                            <div class="bg-white p-2 rounded border shadow-sm">Gatra 4: 8i</div>
+                            <div class="bg-white p-2 rounded border shadow-sm">Gatra 5: 8a</div>
+                            <div class="bg-white p-2 rounded border shadow-sm">Gatra 6: 8i</div>
+                        </div>
+                    </div>
+
+                    <!-- Tuladha Tembang Kinanthi -->
+                    <div class="bg-slate-800 text-slate-100 p-5 rounded-xl space-y-2 text-sm">
+                        <h4 class="text-emerald-400 font-bold border-b border-slate-700 pb-1">Tuladha Tembang Kinanthi</h4>
+                        <p class="italic font-serif leading-loose">
+                            Padha gulangen trikaya, (8u)<br>
+                            Trikaya paraning gesang, (8i)<br>
+                            Kayati kaya basa, (8a)<br>
+                            Trikaya ngungung bekti, (8i)<br>
+                            Kapati kapatira, (8a)<br>
+                            Karanthi pakaranthi. (8i)
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION WULANGAN 6 -->
+            <section id="wulangan6" class="content-section bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="border-b border-slate-200 pb-4">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Bab 3</span>
+                    <h2 class="text-2xl font-bold text-slate-900">WULANGAN 6: MAHAMI AKSARA JAWA</h2>
+                </div>
+
+                <!-- Intro Aksara -->
+                <div id="aksara-intro" class="space-y-3">
+                    <h3 class="text-lg font-bold text-emerald-800">1. Aksara Jawa Nglegena (Hanacaraka)</h3>
+                    <p class="text-sm text-slate-700 leading-relaxed">
+                        Aksara Jawa Nglegena yaiku aksara dhasar kang cacahé ana 20 aksara. Saben aksara nduweni swara vokal "a".
+                    </p>
+
+                    <div class="grid grid-cols-5 gap-2 text-center text-xs font-bold">
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">ha</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">na</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">ca</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">ra</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">ka</div>
+
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">da</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">ta</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">sa</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">wa</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">la</div>
+
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">pa</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">dha</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">ja</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">ya</div>
+                        <div class="p-2 bg-emerald-50 border border-emerald-200 rounded">nya</div>
+
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">ma</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">ga</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">ba</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">tha</div>
+                        <div class="p-2 bg-slate-50 border border-slate-200 rounded">nga</div>
+                    </div>
+                </div>
+
+                <!-- Crita Aji Saka -->
+                <div id="crita-aji-saka" class="pt-4 border-t border-slate-100 space-y-3">
+                    <h3 class="text-lg font-bold text-emerald-800">2. Sejarah / Crita Aji Saka</h3>
+                    <div class="bg-amber-50 p-4 rounded-xl text-xs space-y-2 border border-amber-200 text-slate-700">
+                        <p><strong>Makna Hanacaraka adhedhasar Crita Aji Saka:</strong></p>
+                        <ul class="space-y-1">
+                            <li>• <strong>Ha Na Ca Ra Ka:</strong> Ana utusan (Ada utusan)</li>
+                            <li>• <strong>Da Ta Sa Wa La:</strong> Padha dene padhasudon (Saling berselisih pendapat)</li>
+                            <li>• <strong>Pa Dha Ja Ya Nya:</strong> Padha dene kesaktiane (Sama-sama sakti)</li>
+                            <li>• <strong>Ma Ga Ba Tha Nga:</strong> Padha dadi bathang (Sama-sama menjadi mayat)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sandhangan -->
+                <div id="sandhangan" class="pt-4 border-t border-slate-100 space-y-4">
+                    <h3 class="text-lg font-bold text-emerald-800">3. Sandhangan Swara, Panyigeg, lan Wyanjana</h3>
+
+                    <div class="grid md:grid-cols-3 gap-3 text-xs">
+                        <!-- Swara -->
+                        <div class="border p-3 rounded-lg bg-slate-50">
+                            <h4 class="font-bold text-slate-800 border-b pb-1 mb-2">Sandhangan Swara</h4>
+                            <ul class="space-y-1 text-slate-600">
+                                <li>• <strong>Wulu:</strong> swara i</li>
+                                <li>• <strong>Suku:</strong> swara u</li>
+                                <li>• <strong>Taling:</strong> swara é/e</li>
+                                <li>• <strong>Pepet:</strong> swara e (pepet)</li>
+                                <li>• <strong>Taling Tarung:</strong> swara o</li>
+                            </ul>
+                        </div>
+                        <!-- Panyigeg -->
+                        <div class="border p-3 rounded-lg bg-slate-50">
+                            <h4 class="font-bold text-slate-800 border-b pb-1 mb-2">Panyigeg Wanda (Mati)</h4>
+                            <ul class="space-y-1 text-slate-600">
+                                <li>• <strong>Wignyan:</strong> mateni 'h'</li>
+                                <li>• <strong>Cecak:</strong> mateni 'ng'</li>
+                                <li>• <strong>Layar:</strong> mateni 'r'</li>
+                                <li>• <strong>Pangkon:</strong> mateni aksara ing pungkasan</li>
+                            </ul>
+                        </div>
+                        <!-- Wyanjana -->
+                        <div class="border p-3 rounded-lg bg-slate-50">
+                            <h4 class="font-bold text-slate-800 border-b pb-1 mb-2">Sandhangan Wyanjana</h4>
+                            <ul class="space-y-1 text-slate-600">
+                                <li>• <strong>Cakra:</strong> sesulih 'ra' (kra)</li>
+                                <li>• <strong>Cakra Keret:</strong> sesulih 're' (kre)</li>
+                                <li>• <strong>Pengkal:</strong> sesulih 'ya' (kya)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aksara Khusus & Angka -->
+                <div id="aksara-khusus" class="pt-4 border-t border-slate-100 space-y-3">
+                    <h3 class="text-lg font-bold text-emerald-800">4. Aksara Murda, Swara, lan Angka Jawa</h3>
+                    <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                        <div class="p-3 border rounded-lg">
+                            <span class="font-bold text-slate-800 block mb-1">Aksara Murda:</span>
+                            <p class="text-slate-600">Digunakake kanggo nulis jeneng wong, gelar, papan panggonan, lan Gusti Allah (Huruf Kapital).</p>
+                        </div>
+                        <div class="p-3 border rounded-lg">
+                            <span class="font-bold text-slate-800 block mb-1">Angka Jawa:</span>
+                            <p class="text-slate-600">Angka 0 nganti 9 kang diawiti lan diakhiri tandha <em>pada pangkat</em> (:).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-6 border-t border-slate-700 text-center text-xs">
+        <p>© 2026 e-Book Bahasa Jawa Kelas 6 - Dibuat secara otomatis untuk pembelajaran interaktif.</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Sidebar Toggle for Mobile
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        // Search Filter
+        const searchInput = document.getElementById('search-input');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+
+            contentSections.forEach(section => {
+                const text = section.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```eof
+
+Fitur yang tersedia pada e-Book HTML ini:
+1. **Navigasi Interaktif & Sidebar Responsif**: Memudahkan navigasi antar materi (Geguritan, Teks Prosedur, Kinanthi, dan Aksara Jawa).
+2. **Fitur Pencarian**: Kotak cari cepat di bagian atas untuk menemukan kata kunci materi secara *real-time*.
+3. **Desain Modern & Rapi**: Menggunakan susunan tabel, kartu, serta warna penanda (*highlighting*) yang intuitif untuk kemudahan membaca.
